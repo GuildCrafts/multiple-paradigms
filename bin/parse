@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const parseArgs = require('minimist')
+const args = parseArgs(process.argv.slice(2))
+
+const fileName = args._[0]
+
+if (!fileName) {
+  throw new Error("Missing fileName argument.")
+}
+
+switch (args.paradigm) {
+  case 'oo':
+    // load and use object-oriented parser
+    break
+  case 'functional':
+    // load and use functional parser
+    break
+  case 'imperative':
+    // load and use imperative parser
+    break
+  default:
+    console.error("Missing --paradigm flag.")
+}

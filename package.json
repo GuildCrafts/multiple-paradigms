@@ -1,0 +1,19 @@
+{
+  "name": "multiple-paradigms",
+  "private": false,
+  "version": "0.0.0",
+  "description": "Implement a Markdown parser using three different programming paradigms: **object-oriented**, **functional**, and **imperative**.",
+  "devDependencies": {
+    "chai": "~1.8.0",
+    "mocha": "2.0.1"
+  },
+  "scripts": {
+    "test": "mocha ./spec/*.js",
+    "parse:oo": "bin/parse --paradigm oo",
+    "parse:functional": "bin/parse --paradigm functional",
+    "parse:imperative": "bin/parse --paradigm imperative"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
