@@ -1,6 +1,6 @@
-/*
 
-  Nothing here?
-  Try running `npm setup` :)
+const imperative = (str) => {
+  //stuff
+}
 
-*/
+export default imperative

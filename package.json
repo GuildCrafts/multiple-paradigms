@@ -1,19 +1,32 @@
 {
   "name": "multiple-paradigms",
   "private": false,
-  "version": "0.0.0",
-  "description": "Implement a Markdown parser using three different programming paradigms: **object-oriented**, **functional**, and **imperative**.",
+  "version": "1.0.0",
+  "description": "Implement a Markdown parser in OO, functional, and imperative styles.",
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-register": "^6.18.0",
     "chai": "~1.8.0",
     "mocha": "2.0.1"
   },
   "scripts": {
-    "test": "mocha ./spec/*.js",
+    "test": "mocha --compilers js:babel-register ./javascript/spec/*.js",
     "parse:oo": "bin/parse --paradigm oo",
     "parse:functional": "bin/parse --paradigm functional",
     "parse:imperative": "bin/parse --paradigm imperative"
   },
   "dependencies": {
     "minimist": "^1.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arayi/multiple-paradigms.git"
+  },
+  "author": "@mantinone and @arayi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arayi/multiple-paradigms/issues"
+  },
+  "homepage": "https://github.com/arayi/multiple-paradigms#readme"
 }
