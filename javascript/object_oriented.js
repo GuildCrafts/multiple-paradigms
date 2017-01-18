@@ -1,6 +1,6 @@
 
 const oo = (str) => {
-  //stuff
+  return `${str} got objectified and parsed! oh no!`
 }
 
 export default oo

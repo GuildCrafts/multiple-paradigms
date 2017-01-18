@@ -8,10 +8,12 @@
     "babel-preset-env": "^1.1.8",
     "babel-register": "^6.18.0",
     "chai": "~1.8.0",
+    "eslint": "^3.13.1",
     "mocha": "2.0.1"
   },
   "scripts": {
     "test": "mocha --compilers js:babel-register ./javascript/spec/*.js",
+    "lint": "eslint ./javascript/*.js ./javascript/spec/test.js",
     "parse:oo": "bin/parse --paradigm oo",
     "parse:functional": "bin/parse --paradigm functional",
     "parse:imperative": "bin/parse --paradigm imperative"

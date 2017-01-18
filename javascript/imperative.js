@@ -1,6 +1,6 @@
 
 const imperative = (str) => {
-  //stuff
+  return `${str} got told to parse itself lol`
 }
 
 export default imperative

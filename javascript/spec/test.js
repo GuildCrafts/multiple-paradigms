@@ -1,4 +1,4 @@
-import chai, { expect } from 'chai'
+import { expect } from 'chai'
 import oo from '../object_oriented.js'
 import functional from '../functional.js'
 import imperative from '../imperative.js'
@@ -11,7 +11,7 @@ const test = (input, output) => {
   ]
 
   for (let i in paradigms) {
-    const [name, fn] = [paradigms[i][0], paradigms[i][1]]
+    const [name, fn] = paradigms[i]
     it(name, () => {
       expect(fn(input)).to.equal(output)
     })
@@ -19,13 +19,13 @@ const test = (input, output) => {
 }
 
 const nest = (element) => {
-  const [name, tag] = [element]
+  const [name, tag] = element
 
   describe(`Within ${name} / ${tag}: `, () => {
     const fileName = name
     
-    const input = '' // use FS to read input file into single string
-    const output = '' // use FS to read output file into single string
+    const input = 'test' // use FS to read input file into single string
+    const output = fileName // use FS to read output file into single string
 
     test(input, output)
   })

@@ -1,6 +1,6 @@
 
 const functional = (str) => {
-  //stuff
+  return `${str} got parsed functionally lol`
 }
 
 export default functional
