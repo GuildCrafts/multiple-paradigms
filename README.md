@@ -1,3 +1,16 @@
+# Multiple Paradigms: a Markdown parsing adventure! :D
+
+## Installation and use
+
+```
+$ git clone git@github.com:arayi/multiple-paradigms.git
+$ npm i
+```
+
+**TODO**: parse files via terminal (commands not working yet. don't sass me lol)
+
+Doing a PRR? Try running `npm run lint` and `npm test`.
+
 ## Description
 
 _Provide a brief, high-level overview of what the final product (artifact) of this goal is. Include any relevant resources or dependencies here._
