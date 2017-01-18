@@ -1,6 +1,6 @@
-/*
 
-  Nothing here?
-  Try running `npm setup` :)
+const functional = (str) => {
+  //stuff
+}
 
-*/
+export default functional
