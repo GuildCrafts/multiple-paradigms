@@ -1,42 +1,33 @@
+
+
 import { expect } from 'chai'
 import oo from '../object_oriented.js'
 import functional from '../functional.js'
 import imperative from '../imperative.js'
 
-const tags = {
-  root: {
-    list: ['ol', 'ul']
-      , header: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-      , blockQuote: 'blockquote'
-      , hr: 'hr'
-      , paragraph: 'p'
-      , codeBlock: 'pre'
-  }
-    , formatting: {
-      link: 'a'
-        , bold: 'strong'
-        , italic: 'em',
-        , boldItalic: {
-            bold: 'strong'
-          , italic: 'em'
-        }
-    }
-    , terminal: {
-      image:
-    }
-}
+// const tags = {
+//   root: {
+//     list: ['ol', 'ul']
+//       , header: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+//       , blockQuote: 'blockquote'
+//       , hr: 'hr'
+//       , paragraph: 'p'
+//       , codeBlock: 'pre'
+//   }
+// }
 
-const test = (input, output) => {
-  const paradigms = [
-    ['Object Oriented', oo]
-    , ['Functional', functional]
-    , ['Imperative', imperative]
-  ]
+const paradigms = [
+  oo
+  // , functional
+  // , imperative
+]
 
-  paradigms.map( paradigm => {
-    const [name, fn] = paradigm
-    it(name, () => {
-      expect(fn(input)).to.equal(output)
+const test = (config) => {
+  const {description, input, output} = config
+
+  it(description, () => {
+    paradigms.forEach( paradigm => {
+      expect(paradigm(input)).to.equal(output)
     })
   })
 }
@@ -54,40 +45,45 @@ const testNested = (element) => {
   })
 }
 
-describe('Multiple Paradigms', () => {
-  'use strict'
+describe('Multiple Paradigms:', () => {
 
   it('A function exists for each paradigm', () => {
     const paradigms = [oo, functional, imperative]
-    paradigms.map( x => expect(x).to.be.a('function') )
+    paradigms.forEach( x => { expect(x).to.be.a('function') } )
   })
 
-  it('Each function returns valid html', () => {
-    test('', '<div></div>')
+  describe('Each function:', () => {
+    test({
+      description: 'Returns valid html'
+      , input: ''
+      , output: '<div></div>'
+    })
+
+    test({
+      description: 'Removes leading whitespace'
+      , input: '\n\n\nbutt'
+      , output: '<div>butt</div>'
+    })
   })
 
+  it('Correctly parses root structures')
+  // describe('Correctly parses root structures:', () => {
+  //   // test({
+  //   //   description: 'paragraph'
+  //   //   , input: 'test'
+  //   //   , output: '<p>test</p>'
+  //   // })
 
+  //   // test({
+  //   //   description: 'header\n'
+  //   //   , input: '# test'
+  //   //   , output: '<h1>test</h1>'
+  //   // })
+  // })
+
+  it('Correctly parses nested structures')
+  // describe('Correctly parses nested structures: ', () => {
+  //   testNested(['paragraph', '<p>'])
+  // })
 })
 
-describe('\nCorrectly parses root structures:', () => {
-
-  describe('\\n\\n + text + \\n\\n -> <p>', () => {
-
-    const input = '\n\ntest\n\n'
-    const output = '<p>test</p>'
-
-    test(input, output)
-  })
-
-  describe('# + text + \\n -> <h1>', () => {
-
-    const input = '#test\n'
-    const output = '<h1>test</h1>'
-
-    test(input, output)
-  })
-})
-
-describe('\nCorrectly parses nested structures: ', () => {
-  testNested(['paragraph', '<p>'])
-  })
