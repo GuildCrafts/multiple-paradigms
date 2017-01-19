@@ -32,18 +32,18 @@ const test = (config) => {
   })
 }
 
-const testNested = (element) => {
-  const [name, tag] = element
+// const testNested = (element) => {
+//   const [name, tag] = element
 
-  describe(`Within ${name} / ${tag}: `, () => {
-    const fileName = name
+//   describe(`Within ${name} / ${tag}: `, () => {
+//     const fileName = name
 
-    const input = 'test' // use FS to read input file into single string
-    const output = fileName // use FS to read output file into single string
+//     const input = 'test' // use FS to read input file into single string
+//     const output = fileName // use FS to read output file into single string
 
-    test(input, output)
-  })
-}
+//     test(input, output)
+//   })
+// }
 
 describe('Multiple Paradigms:', () => {
 
