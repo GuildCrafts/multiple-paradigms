@@ -1,6 +1,23 @@
 
+const bounds = {
+}
+
 const oo = (str) => {
-  return `${str} got objectified and parsed! oh no!`
+  const root = new Node(str)
+  return root.parse()
+}
+
+class Node {
+  constructor( content, tag='div' ){
+    this.open = `<${tag}>`
+    this.content = content
+    this.close = tag === 'hr' ? '' : `</${tag}>`
+  }
+
+  parse () {
+    const content = this.content.parse ? this.content.parse() : this.content
+    return `${this.open, content, this.close}`
+  }
 }
 
 export default oo
