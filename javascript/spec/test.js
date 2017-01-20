@@ -16,7 +16,7 @@ import imperative from '../imperative.js'
 //   }
 // }
 
-const paradigms = [
+const activeParadigms = [
   oo
   // , functional
   // , imperative
@@ -26,8 +26,8 @@ const test = (config) => {
   const {description, input, output} = config
 
   it(description, () => {
-    paradigms.forEach( paradigm => {
-      expect(paradigm(input)).to.equal(output)
+    activeParadigms.forEach( paradigm => {
+      expect(paradigm(input).toString()).to.equal(output.toString())
     })
   })
 }
@@ -52,38 +52,44 @@ describe('Multiple Paradigms:', () => {
     paradigms.forEach( x => { expect(x).to.be.a('function') } )
   })
 
-  describe('Each function:', () => {
+  describe('Each function', () => {
     test({
-      description: 'Returns valid html'
-      , input: ''
-      , output: '<div></div>'
+      description: 'returns valid html'
+      , input: 'test'
+      , output: '<div>test</div>'
+    })
+
+    it('throws an error if passed invalid input', () => {
+      const paradigms = activeParadigms
+      paradigms.forEach(x => { expect(() => x('')).to.throw(
+        'Invalid input! Requires a non-empty string.'
+      )})
     })
 
     test({
-      description: 'Removes leading whitespace'
-      , input: '\n\n\nbutt'
-      , output: '<div>butt</div>'
+      description: 'removes leading whitespace'
+      , input: '\v\r\n\n\ntest'
+      , output: '<div>test</div>'
     })
   })
 
-  it('Correctly parses root structures')
-  // describe('Correctly parses root structures:', () => {
-  //   // test({
-  //   //   description: 'paragraph'
-  //   //   , input: 'test'
-  //   //   , output: '<p>test</p>'
-  //   // })
+  describe('Correctly parses root structures:', () => {
+    it('pending')
+    // test({
+    //   description: 'paragraph'
+    //   , input: 'test'
+    //   , output: '<p>test</p>'
+    // })
 
-  //   // test({
-  //   //   description: 'header\n'
-  //   //   , input: '# test'
-  //   //   , output: '<h1>test</h1>'
-  //   // })
-  // })
-
-  it('Correctly parses nested structures')
-  // describe('Correctly parses nested structures: ', () => {
-  //   testNested(['paragraph', '<p>'])
-  // })
+    // test({
+    //   description: 'header\n'
+    //   , input: '# test'
+    //   , output: '<h1>test</h1>'
+    // })
+  })
+  describe('Correctly parses nested structures: ', () => {
+    it('pending')
+    // testNested(['paragraph', '<p>'])
+  })
 })
 
