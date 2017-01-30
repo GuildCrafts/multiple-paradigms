@@ -61,6 +61,7 @@ _List of specifications (specs) for the completed goal. These are declarative se
 
 - [ ] Artifact produced is a fork of the [multiple-paradigms][multiple-paradigms] repo.
 - [ ] Can run all tests with `npm test`.
+- [ ] All functions are covered by unit tests.
 - [ ] All tests are passing.
 - [ ] Can parse Markdown syntax ([reference](https://help.github.com/articles/basic-writing-and-formatting-syntax/)) and render correct HTML for...
   - [ ] Paragraphs
