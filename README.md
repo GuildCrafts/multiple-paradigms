@@ -97,16 +97,6 @@ _Do not remove these specs - they are required for all goals_.
 
 - [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
-### Stretch
-
-For each programming paradigm, write a Markdown parser using a language that _specializes in that paradigm_.
-
-- [ ] Object-oriented-style Markdown parser is written in either [Java](https://www.java.com/en/) or [Ruby](https://www.ruby-lang.org/)
-- [ ] Functional-style Markdown parser is written in either [Clojure](https://clojure.org/) or [Haskell](https://www.haskell.org/)
-- [ ] Imperative-style Markdown parser is written in either [C](https://en.wikipedia.org/wiki/C_(programming_language)) or [Go](https://golang.org/)\*
-
-_\*It is a bit blasphemous to say that Go specializes in imperative programming, as it is a highly sophisticated language. That being said, it works just fine when using an imperative style._
-
 ## Quality Rubric
 
 **Well formatted code**
