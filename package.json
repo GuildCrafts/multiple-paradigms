@@ -8,7 +8,7 @@
     "mocha": "2.0.1"
   },
   "scripts": {
-    "test": "mocha ./spec/*.js",
+    "test": "mocha ./test/*.js",
     "parse:oo": "bin/parse --paradigm oo",
     "parse:functional": "bin/parse --paradigm functional",
     "parse:imperative": "bin/parse --paradigm imperative"
