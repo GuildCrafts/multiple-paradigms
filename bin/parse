@@ -15,46 +15,58 @@ switch (args.paradigm) {
     // load and use object-oriented parser
     break
   case 'functional':
-    console.log(
-      functional.removeItalicsMD(
-        functional.addItalicsHTML(
-          functional.removeBoldMD(
-            functional.addBoldHTML(
-              functional.removeListItemsMD(
-                functional.addListItems(
-                  functional.addUnorderedList(
-                    functional.addOrderedList(
-                      functional.removeHorizontalMD(
-                        functional.addHorizontalRule(
-                          functional.removeHeadersMD(
-                            functional.addH1(
-                              functional.addH2(
-                                functional.addH3(
-                                  functional.addH4(
-                                    functional.addH5(
-                                      functional.addH6(
-                                        functional.removeBlockQuotesMD(
-                                          functional.addBlockQuotes(
-                                            fs.readFileSync(fileName, 'utf8')
-                                          )
-                                        )
-                                      )
-                                    )
-                                  )
-                                )
-                              )
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      )
+    console.log(applyParsingFunctions(fs.readFileSync(fileName, 'utf8'))
+      // functional.removeItalicsMD(
+      //   functional.addItalicsHTML(
+      //     functional.removeBoldMD(
+      //       functional.addBoldHTML(
+      //         functional.removeListItemsMD(
+      //           functional.addListItems(
+      //             functional.addUnorderedList(
+      //               functional.addOrderedList(
+      //                 functional.removeHorizontalMD(
+      //                   functional.addHorizontalRule(
+      //                     functional.removeHeadersMD(
+      //                       functional.addH1(
+      //                         functional.addH2(
+      //                           functional.addH3(
+      //                             functional.addH4(
+      //                               functional.addH5(
+      //                                 functional.addH6(
+      //                                   functional.removeBlockQuotesMD(
+      //                                     functional.addBlockQuotes(
+      //                                       functional.removeInlineCodeMD(
+      //                                         functional.addInlineCode(
+      //                                           functional.removeCodeBlockMD(
+      //                                             functional.addCodeBlock(
+      //                                               functional.addLinks(
+      //                                                 functional.addImages(
+      //                                                   fs.readFileSync(fileName, 'utf8')
+      //                                                 )
+      //                                               )
+      //                                             )
+      //                                           )
+      //                                         )
+      //                                       )
+      //                                     )
+      //                                   )
+      //                                 )
+      //                               )
+      //                             )
+      //                           )
+      //                         )
+      //                       )
+      //                     )
+      //                   )
+      //                 )
+      //               )
+      //             )
+      //           )
+      //         )
+      //       )
+      //     )
+      //   )
+      // )
     )
     break
   case 'imperative':
