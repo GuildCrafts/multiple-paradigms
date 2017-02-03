@@ -4,7 +4,7 @@ function applyParsingFunctions(markdownFile) {
   }, markdownFile)
 }
 
-var functionNames = [addImages, addLinks, addCodeBlock, removeCodeBlockMD,
+var functionNames = [addImages, addLinks, addCodeBlock,
   addInlineCode, removeInlineCodeMD, addBlockQuotes, removeBlockQuotesMD,
   addH6, addH5, addH4, addH3, addH2, addH1, removeHeadersMD, addHorizontalRule,
   removeHorizontalMD, addOrderedList, addUnorderedList, addListItems,
@@ -76,7 +76,7 @@ function addLinks(input) {
 
 // IMAGES //
 function addImages(input) {
-  return input.replace(/!\[(.+)\]\((.+)\)/gm, '<img="$2" alt= "$1">')
+  return input.replace(/!\[(.+)\]\((.+)\)/gm, '<img src="$2" alt= "$1">')
 }
 
 // UNORDERED LISTS //
@@ -133,11 +133,6 @@ function removeInlineCodeMD(input) {
 
 // CODE BLOCK //
 function addCodeBlock(input) {
-  return input.replace(/^(```\n)((.)+(\n))+(```)$/gm, `<pre><code>
-$&
-</pre><code>`)
-}
-
-function removeCodeBlockMD(input) {
-  return input.replace(/\n```/gm, '')
+  return input.replace(/^(```\n)(((.+)\n)+)(```)$/gm, `<pre><code>
+$2</code></pre>`)
 }
