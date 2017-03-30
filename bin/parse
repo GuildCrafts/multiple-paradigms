@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+const fs = require('fs')
+const functional = require('../lib-functional/index')
 const parseArgs = require('minimist')
 const args = parseArgs(process.argv.slice(2))
 
@@ -14,7 +15,7 @@ switch (args.paradigm) {
     // load and use object-oriented parser
     break
   case 'functional':
-    // load and use functional parser
+    console.log(functional.applyParsingFunctions(fs.readFileSync(fileName, 'utf8')))
     break
   case 'imperative':
     // load and use imperative parser
